@@ -14,7 +14,7 @@ const root = ReactDOM.createRoot(
 
 root.render(
   <React.StrictMode>
-    <BrowserRouter>
+    <BrowserRouter basename="/k8s/admin-client-react/v1">
       <Routes>
         <Route path="/" element={<SignIn />} />
         <Route path="dashboard" element={<Dashboard />} />
