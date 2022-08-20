@@ -3,10 +3,9 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 // import App from './App';
 import reportWebVitals from './reportWebVitals';
-import 'antd/dist/antd.css';
 import Dashboard from './page/dashboard/Dashboard';
 import SignIn from './page/login/SignIn';
-import { Routes, Route, BrowserRouter } from 'react-router-dom';
+import { Routes, Route, BrowserRouter, Navigate } from 'react-router-dom';
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
@@ -18,6 +17,10 @@ root.render(
       <Routes>
         <Route path="/" element={<SignIn />} />
         <Route path="dashboard" element={<Dashboard />} />
+        <Route
+          path="*"
+          element={<Navigate to="/" replace />}
+        />
       </Routes>
     </BrowserRouter>
   </React.StrictMode>
